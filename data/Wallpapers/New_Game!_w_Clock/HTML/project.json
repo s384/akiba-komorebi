@@ -1,0 +1,54 @@
+{
+	"contentrating" : "Everyone",
+	"description" : "New Game! Nenecchi Wallpaper with Clock, Dark Mode\r\n\r\n+ Kawaii Nenecchi\r\n+ Clock\r\n+ Dark Mode\r\n+ Lanuage Support (English, 한국어, 日本語)",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"dark_mode" : 
+			{
+				"condition" : "",
+				"order" : 100,
+				"text" : "Dark Mode",
+				"type" : "bool",
+				"value" : false
+			},
+			"language" : 
+			{
+				"options" : 
+				[
+					{
+						"label" : "English",
+						"value" : "eng"
+					},
+					{
+						"label" : "한국어",
+						"value" : "kor"
+					},
+					{
+						"label" : "日本語",
+						"value" : "jpn"
+					}
+				],
+				"order" : 101,
+				"text" : "Lanuage",
+				"type" : "combo",
+				"value" : "eng"
+			},
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0 0 0"
+			}
+		}
+	},
+	"preview" : "preview.jpg",
+	"tags" : [ "Anime" ],
+	"title" : "New Game! w/ Clock, Dark Mode",
+	"type" : "web",
+	"visibility" : "public",
+	"workshopid" : "1795260221"
+}

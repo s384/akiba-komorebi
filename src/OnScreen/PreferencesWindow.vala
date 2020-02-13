@@ -42,6 +42,7 @@ namespace Komorebi.OnScreen {
 		Box titleBox = new Box(Orientation.VERTICAL, 5);
 		Label titleLabel = new Label("");
 		Label aboutLabel = new Label("");
+		Label aboutLabel2 = new Label("");
 
 		Gtk.CheckButton twentyFourHoursButton = new Gtk.CheckButton.with_label ("Use 24-hour time");
 		Gtk.CheckButton showDesktopIconsButton = new Gtk.CheckButton.with_label ("Show desktop icons");
@@ -50,7 +51,7 @@ namespace Komorebi.OnScreen {
 		Gtk.Box bottomPreferencesBox = new Box(Orientation.HORIZONTAL, 10);
 
 		Button donateButton = new Button.with_label("Donate");
-		Button reportButton = new Button.with_label("Report an issue");
+		Button reportButton = new Button.with_label("More Wallpapers");
 
 		// Contains wallpapers page widgets
 		Gtk.Box wallpapersPage = new Box(Orientation.VERTICAL, 10);
@@ -79,14 +80,13 @@ namespace Komorebi.OnScreen {
 			.notebook.header {
 				background-color: rgb(0,0,0);
 			}
-			.notebook notebook:focus tab {
-				background: none;
-				border-width: 0;
-				border-radius: 0px;
-				border-color: transparent;
-				border-image-width: 0;
-				border-image: none;
-				background-color: red;
+			.notebook tab:checked {
+				background-image: -gtk-gradient (linear, left top, left bottom,
+								from (shade (@bg_color_active_tab, 1.2)),
+								to (shade (@bg_color_active_tab, 1.12)));
+				color: @bg_color;
+				border-top-right-radius: 10px;
+				border-top-left-radius: 10px;
 			}
 			";
 
@@ -115,6 +115,16 @@ namespace Komorebi.OnScreen {
 				border: none;
 			}
 			";
+
+		string borderCSS = "*{
+								border: 1.5px solid #43bab7;
+							}";
+
+		string borderTopCSS = "*{
+								border-top: 1.5px solid #43bab7;
+								padding: 25px;
+							}";
+
 		public PreferencesWindow (string selectedTab = "preferences") {
 
 			title = "";
@@ -125,11 +135,18 @@ namespace Komorebi.OnScreen {
 			applyCSS({this.notebook}, notebookCSS);
 			applyCSS({this.infoBar}, infoBarCSS);
 			applyCSS({headerBar, hideButton, quitButton, donateButton, reportButton}, headerCSS);
+			
+			// Akiba diseño
+			applyCSS({this}, borderCSS);
+			applyCSS({bottomWallpapersBox}, borderTopCSS);
+			applyCSS({hideButton, quitButton, donateButton, reportButton}, borderCSS);
+
 			addAlpha({this});
 
 			// Setup Widgets
 			titleLabel.set_markup("<span font='Lato Light 30px' color='white'>Komorebi</span>");
 			aboutLabel.set_markup("<span font='Lato Light 15px' color='white'>by Abraham Masri @cheesecakeufo</span>");
+			aboutLabel2.set_markup("<span font='Lato Light 15px' color='white'>This is a version edit for Akiba and SebTrujillo</span>");
 
 			// showSystemStatsButton.active = showInfoBox;
 			twentyFourHoursButton.active = timeTwentyFour;
@@ -171,8 +188,8 @@ namespace Komorebi.OnScreen {
 
 			currentWallpaperLabel.selectable = true;
 
-			bottomWallpapersBox.margin = 25;
-			bottomWallpapersBox.margin_top = 10;
+			//bottomWallpapersBox.margin = 25;
+			//bottomWallpapersBox.margin_top = 10;
 
 			// Signals
 			destroy.connect(() => { canOpenPreferences = true;});
@@ -188,14 +205,14 @@ namespace Komorebi.OnScreen {
 			donateButton.released.connect(() => {
 
 				print("Thank you <3\n");
-				AppInfo.launch_default_for_uri("https://goo.gl/Yr1RQe", null); // Thank you <3
+				AppInfo.launch_default_for_uri("http://paypal.me/akibaillusion", null); // Thank you <3
 				destroy();
 
 			});
 
 			reportButton.released.connect(() => {
 
-				AppInfo.launch_default_for_uri("https://goo.gl/aaJgN7", null);
+				AppInfo.launch_default_for_uri("https://komorebithemeslinux.jimdofree.com/", null);
 				destroy();
 			});
 
@@ -237,8 +254,9 @@ namespace Komorebi.OnScreen {
 
 			titleBox.add(titleLabel);
 			titleBox.add(aboutLabel);
+			titleBox.add(aboutLabel2);
 
-			aboutGrid.attach(new Image.from_file("/System/Resources/Komorebi/komorebi.svg"), 0, 0, 1, 1);
+			aboutGrid.attach(new Image.from_file("/usr/share/komorebi/Resources/Komorebi/komorebi.svg"), 0, 0, 1, 1);
 			aboutGrid.attach(titleBox, 1, 0, 1, 1);
 
 			bottomPreferencesBox.pack_start(donateButton);
@@ -250,7 +268,7 @@ namespace Komorebi.OnScreen {
 			preferencesPage.add(enableVideoWallpapersButton);
 			preferencesPage.pack_end(bottomPreferencesBox);
 
-			bottomWallpapersBox.add(new Image.from_file("/System/Resources/Komorebi/info.svg"));
+			bottomWallpapersBox.add(new Image.from_file("/usr/share/komorebi/Resources/Komorebi/info.svg"));
 			bottomWallpapersBox.add(currentWallpaperLabel);
 
 			if(!canPlayVideos()) {

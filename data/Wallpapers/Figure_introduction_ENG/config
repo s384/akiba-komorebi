@@ -1,0 +1,65 @@
+[Info]
+WallpaperType=web_page
+WebPageUrl=file:///usr/share/komorebi/Resources/Komorebi/Figure_introduction_ENG/HTML/index.html
+
+###################################################
+#   CLOCK FUNCTIONS ARE DISABLED /// RECOMMENDED   
+###################################################
+
+[DateTime]
+Visible=false 
+Parallax=false
+MarginTop=0
+MarginRight=0
+MarginLeft=0
+MarginBottom=0
+RotationX=0
+RotationY=0
+RotationZ=0
+Position=false
+Alignment=false
+AlwaysOnTop=false
+Color=false
+Alpha=0
+ShadowColor=#0
+ShadowAlpha=0
+TimeFont=Lato weight=0 0
+DateFont=Lato weight=0 0
+
+###################################################
+###################################################
+#
+#                    db         db
+#                   dpqb       dp8b
+#                   8b qb_____dp_88
+#                   88/ .        `p
+#                   q'.            \
+#                  .'.  .-.    ,-.  `--.
+#                  |.  / 0 \  / 0 \ |   \
+#                  |.  `.__   ___.' | \\/
+#                  |.       "       | (
+#                   \.    `-'-'    ,' |
+#                  _/`------------'. .|
+#                 /.  \\::(::[];)||.. \
+#                /.  ' \.`:;;;;'''/`. .|
+#               |.   |/ `;--._.__/  |..|
+#               |.  _/_,'''',,`.    `:.'
+#               |.     ` / ,  ',`.   |/     
+#                \.   -'/\/     ',\  |\         
+#                 /\__-' /\ /     ,. |.\       
+#                /. .|  '  /-.    ,: |..\
+#               :.  .|    /| | ,  ,||. ..:
+#               |.  .`     | '//` ,:|.  .|
+#               |..  .\      //\/ ,|.  ..|
+#                \.   .\     <./  ,'. ../
+#                 \_ ,..`.__    _,..,._/
+#                   `\|||/  `--'\|||/'
+#           _    _ _             _____ _ _           _             
+#     /\   | |  (_| |           |_   _| | |         (_)            
+#    /  \  | | ___| |__   __ _    | | | | |_   _ ___ _  ___  _ __  
+#   / /\ \ | |/ | | '_ \ / _` |   | | | | | | | / __| |/ _ \| '_ \ 
+#  / ____ \|   <| | |_) | (_| |  _| |_| | | |_| \__ | | (_) | | | |
+# /_/    \_|_|\_|_|_.__/ \__,_| |_____|_|_|\__,_|___|_|\___/|_| |_|
+                                                                  
+
+                                                                  

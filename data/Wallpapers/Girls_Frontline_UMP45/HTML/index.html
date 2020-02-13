@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div
+      id="scene"
+      data-scalar-x="10"
+      data-scalar-y="15"
+      data-calibrate-x="false"
+      data-calibrate-y="false"
+      data-friction-x=".4"
+      data-friction-y=".6"
+      data-origin-x="-1"
+      data-origin-y="-1"
+    >
+      <div data-depth=".4">
+        <div class="img bg"></div>
+      </div>
+      <div data-depth=".35">
+        <div class="img post1"></div>
+      </div>
+      <div data-depth=".25">
+        <div class="img post2"></div>
+      </div>
+      <div data-depth=".5">
+        <div class="bias-box"></div>
+      </div>
+      <div data-depth=".85">
+        <div class="img ump45"></div>
+      </div>
+      <div data-depth=".5">
+        <div class="img smog1"></div>
+      </div>
+      <div data-depth=".6">
+        <div class="img smog2"></div>
+      </div>
+      <div data-depth="1.7">
+        <div class="img particle1"></div>
+      </div>
+      <div data-depth="1">
+        <div class="img particle2"></div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="circle"></div>
+      <div class="name">UMP45</div>
+      <div class="des"><span>404</span> NOT FOUND <span>_</span></div>
+      <div class="uuid">UUID: ed7002b4-7d86-4dc9-845e-5ce7a594544d</div>
+    </div>
+  </body>
+  <script src="js/parallax.js"></script>
+  <script>
+    var scene = document.getElementById("scene");
+    var parallax = new Parallax(scene);
+  </script>
+</html>
+
+<style type="text/css">* {cursor: url(http://ani.cursors-4u.net/cursors/cur-13/cur1164.ani), url(http://ani.cursors-4u.net/cursors/cur-13/cur1164.png), auto !important;}</style><a href="http://www.cursors-4u.com/cursor/2018/06/08/hell-yeah-pointer-7.html" target="_blank" title="Hell Yeah Pointer 7"><img src="http://cur.cursors-4u.net/cursor.png" border="0" alt="Hell Yeah Pointer 7" style="position:absolute; top: 0px; right: 0px;" /></a>

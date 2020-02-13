@@ -90,6 +90,10 @@ namespace Komorebi.OnScreen {
         string separatorCSS = "*{
                                 color: rgba(51,51,51,0.6);
                                 }";
+
+        string borderCSS = "*{
+                                border: 1.5px solid #43bab7;
+                            }";
     	public InfoWindow() {
 
             // Configure the window
@@ -112,6 +116,7 @@ namespace Komorebi.OnScreen {
             separator.margin_top = 10;
             separator.margin_bottom = 10;
             applyCSS({separator}, separatorCSS);
+            applyCSS({mainBox}, borderCSS);
 
             fileInfoBox.margin = 20;
 
@@ -122,7 +127,7 @@ namespace Komorebi.OnScreen {
             });
 
     		// Add widgets
-            closeButton.add(new Image.from_file("/System/Resources/Komorebi/close_btn.svg"));
+            closeButton.add(new Image.from_file("/usr/share/komorebi/Resources/Komorebi/close_btn.svg"));
     		headerBar.pack_start(closeButton, false, false);
 
     		topBox.add(titleLabel);

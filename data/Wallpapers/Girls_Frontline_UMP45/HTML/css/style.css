@@ -1,0 +1,139 @@
+:root {
+  --orange: rgb(255, 190, 14);
+  --blue: rgb(2, 177, 255);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+body {
+  background-color: black;
+}
+
+#scene {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.img {
+  width: 110vw;
+  height: 110vh;
+  background-size: cover;
+  background-position: top right;
+}
+
+.bg {
+  background-image: url("../img/bg.png");
+}
+
+.ump45 {
+  background-image: url("../img/ump45.png");
+  margin-top: 90px;
+}
+
+.smog1 {
+  background-image: url("../img/smog1.png");
+}
+
+.smog2 {
+  background-image: url("../img/smog2.png");
+}
+
+.post1 {
+  background-image: url("../img/post1.png");
+}
+
+.post2 {
+  background-image: url("../img/post2.png");
+}
+
+.particle1 {
+  background-image: url("../img/particle1.png");
+  margin-top: 150px;
+}
+
+.particle2 {
+  background-image: url("../img/particle2.png");
+  margin-top: 400px;
+}
+
+.info-card {
+  position: fixed;
+  top: 40vh;
+  left: 10vw;
+}
+
+/* .info-card .circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid var(--blue);
+} */
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.info-card .name {
+  position: absolute;
+  background-color: white;
+  font-size: 74px;
+  font-weight: 600;
+  padding: 10px;
+  border-left: 8px solid var(--orange);
+  animation: 5s ease-out 1s fadein backwards;
+  transition: .3s;
+}
+
+.info-card .name:hover {
+  padding: 10px 40px;
+}
+
+.info-card .des {
+  font-size: 42px;
+  color: white;
+  margin-top: 120px;
+  animation: 5s ease-out 2s fadein backwards;
+}
+
+.info-card .des span {
+  color: var(--orange);
+}
+
+.info-card .des span:nth-child(2) {
+  animation: .5s ease-in-out fadein infinite reverse;
+}
+
+.info-card .uuid {
+  color: white;
+  font-size: 14px;
+  padding: 10px 0;
+  animation: 5s ease-out 3s fadein backwards;
+}
+
+.info-card .uuid::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60%;
+  height: 2px;
+  background-color: white;
+  transition: .3s;
+}
+
+.info-card .uuid:hover::after {
+  width: 100%;
+}
